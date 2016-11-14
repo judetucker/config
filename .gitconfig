@@ -1,6 +1,10 @@
 [user]
-  name = Mark Otto
-  email = markdotto@gmail.com
+  name = "[YOUR NAME]"
+	email = [YOUR GITHUB EMAIL]
+	signingkey = [YOUR GPG SIGNING KEY IF YOU HAVE ONE]
+  
+[commit]
+  gpgsign = [MAKE true IF YOU USE GPG]
 
 [alias]
   co = checkout
@@ -8,6 +12,14 @@
   ci = commit
   st = status
   br = branch
+
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
+  
+[push]
+	default = simple
 
 [color]
     ui = auto
@@ -27,3 +39,5 @@
     untracked = cyan
   [core]
     whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
+		editor = atom --wait
+
